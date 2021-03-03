@@ -77,10 +77,17 @@ input[type=radio].with-font:focus~label:before, input[type=checkbox].with-font:f
   font-size: 12px;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (max-width: 600px) {
   :root {
     --base-padding: 12px;
     font-size: 14px; 
+  }
+  .sectionCart{
+    max-width:95%;
+    border:solid 1px black;
+    border-radius: 1%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -111,6 +118,7 @@ body {
 
 @media screen and (min-width: 600px) {
   .main-container { grid-template-columns: 5fr 6fr }
+  
 }
 
 @media screen and (min-width: 1000px) {
