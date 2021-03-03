@@ -1,43 +1,210 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Site meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Orinoco, votre boutique en ligne!</title>
+    <!-- CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     
-    <title>Orinoco</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    
 </head>
 <body>
-    <div><H1> Salut!</H1></div>
 
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Orinoco</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
     
-
-    <div class="dropdown">
-        <div id="cart">
-            <p><span id="in-cart-items-num">0</span> Articles</p>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
+                <ul class="navbar-nav m-auto">
+                    <li class="nav-item m-auto">
+                        <a class="nav-link" href="index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="PanierOrinoco.html">Panier </a>
+                    </li>
+                </ul>
+    
+            </div>
+            
         </div>
+    </nav>
     
-        <ul id="cart-dropdown" hidden>
-            <li id="empty-cart-msg"><a>Votre panier est vide</a></li>
-            <li class="go-to-cart hidden"><a href="/panier/">Voir le panier</a></li>
-        </ul>
+<section class="jumbotron text-center">
+    <div class="container">
+        <h1 class="jumbotron-heading">ORINOCO, votre boutique en ligne!</h1>
+        <p class="lead text-muted mb-0">Une envie, un désir? Nous sommes là pour vous!</p>
     </div>
-
-    <label for="q">Quantité: </label>
-<select id="qt" name="q">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
-    <option value="7">7</option>
-    <option value="8">8</option>
-    <option value="9">9</option>
-</select>
-<button type="button" class="add-to-cart" data-id="432" data-name="Pastilles" data-price="29,00" data-weight="97" data-url="/produit/pastilles-anti-douleurs/">Ajouter au panier</button>
-
-
+</section>
   
+
+
+    <section class="sectionCart">
+        <h2 class="text-center">Panier</h2>
+        <div class="cart"></div>
+    </section>
+
+<section class="section">
+<div class="container-fluid">
+    
+    <div class="row">
+        <div class="col-sm">
+            <div class="card">
+               
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="product">
+                                <img class="product__image" src="images/teddy_1.jpg" alt="Ours classique">
+                                
+                                    <h2 class="product__name">Le Classique</h2>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    
+                                            <h3 class="product__price">49</h3>
+                                        
+                                            <button class="btn btn--primary" data-action="ADD_TO_CART">Ajouter au panier</button>
+                                        
+                                  
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="product">
+                                <img class="product__image" src="images/teddy_2.jpg" alt="Ours classique">
+                                
+                                    <h2 class="product__name">Le Calin</h2>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    
+                                            <h3 class="product__price">49</h3>
+                                        
+                                            <button class="btn btn--primary" data-action="ADD_TO_CART">Ajouter au panier</button>
+                                        
+                                  
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="product">
+                                <img class="product__image" src="images/teddy_3.jpg" alt="Ours classique">
+                                
+                                    <h2 class="product__name">Le Couple</h2>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    
+                                            <h3 class="product__price">49</h3>
+                                        
+                                            <button class="btn btn--primary" data-action="ADD_TO_CART">Ajouter au panier</button>
+                                        
+                                  
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="product">
+                                <img class="product__image" src="images/teddy_4.jpg" alt="Ours classique">
+                                
+                                    <h2 class="product__name">Le Copain</h2>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    
+                                            <h3 class="product__price">49</h3>
+                                        
+                                            <button class="btn btn--primary" data-action="ADD_TO_CART">Ajouter au panier</button>
+                                        
+                                  
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="product">
+                                <img class="product__image" src="images/teddy_5.jpg" alt="Ours classique">
+                                
+                                    <h2 class="product__name">Le Timide</h2>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    
+                                            <h3 class="product__price">49</h3>
+                                        
+                                            <button class="btn btn--primary" data-action="ADD_TO_CART">Ajouter au panier</button>
+                                        
+                                  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>
+</section>
+
+
+
+
+<!-- Footer -->
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-6">
+        <h6>About</h6>
+        <p class="text-justify">Scanfcode.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative  to help the upcoming programmers with the code. Scanfcode focuses on providing the most efficient code or snippets as the code wants to be simple. We will help programmers build up concepts in different programming languages that include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL and Algorithm.</p>
+      </div>
+
+      <div class="col-xs-6 col-md-3">
+        <h6>Categories</h6>
+        <ul class="footer-links">
+          <li><a href="http://scanfcode.com/category/c-language/">C</a></li>
+          <li><a href="http://scanfcode.com/category/front-end-development/">UI Design</a></li>
+          <li><a href="http://scanfcode.com/category/back-end-development/">PHP</a></li>
+          <li><a href="http://scanfcode.com/category/java-programming-language/">Java</a></li>
+          <li><a href="http://scanfcode.com/category/android/">Android</a></li>
+          <li><a href="http://scanfcode.com/category/templates/">Templates</a></li>
+        </ul>
+      </div>
+
+      <div class="col-xs-6 col-md-3">
+        <h6>Quick Links</h6>
+        <ul class="footer-links">
+          <li><a href="http://scanfcode.com/about/">About Us</a></li>
+          <li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
+          <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Contribute</a></li>
+          <li><a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a></li>
+          <li><a href="http://scanfcode.com/sitemap/">Sitemap</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-sm-6 col-xs-12">
+        <p class="copyright-text">Copyright &copy; 2017 All Rights Reserved by 
+     <a href="#">Scanfcode</a>.
+        </p>
+      </div>
+
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <ul class="social-icons">
+          <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+          <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+  <!-- Footer -->
+
+
+
+
+
+
+<!-- JS -->
+
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" ></script>
+<script src="main.js"></script>
 </body>
 </html>
