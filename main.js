@@ -30,6 +30,10 @@ addToCartButtonsDOM.forEach(addToCartButtonDOM => {
             image: productDOM.querySelector('.product__image').getAttribute('src'),
             name: productDOM.querySelector('.product__name').innerText,
             price: productDOM.querySelector('.product__price').innerText,
+
+            /**description: productDOM.querySelector('.product__description').innerText,**/
+            description: productDOM.querySelector('.product__color').innerText,
+
             quantity: 1,
         };
 
@@ -52,6 +56,10 @@ function insertItemToDOM(product){
             <img class="cart__item__image" src="${product.image}" alt="${product.name}">
             <h3 class="cart__item__name">${product.name}</h3>
             <h3 class="cart__item__price">${product.price}</h3>
+
+            
+            <form class="product__color">${product.input}</form> 
+
             <button class="btn btn--primary btn--small${(product.quantity === 1 ? ' btn--danger' : '')}" data-action="DECREASE_ITEM">&minus;</button>
             <h3 class="cart__item__quantity">${product.quantity}</h3>
             <button class="btn btn--primary btn--small" data-action="INCREASE_ITEM">&plus;</button>
@@ -182,3 +190,22 @@ function saveCart(){
     localStorage.setItem('cart', JSON.stringify(cart));
     countCartTotal();
 }
+
+/**couleurs */
+document.querySelector('form').addEventListener('change', function () {
+    var color = document.querySelectorAll('input');
+    for (var i = 0; i < color.length; i++) {
+        if ( color[i].checked === true )  break;
+        
+        
+    }
+    alert('value => '+color[i].value);	
+    localStorage.setItem("choix", $(color).prop("checked")); 
+    localStorage.setItem("choix", color); 
+    document.querySelector(color);  	
+    console.log(document.querySelector(color));
+})
+
+
+
+
