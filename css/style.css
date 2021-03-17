@@ -57,7 +57,9 @@ input[type=radio].with-font:focus~label:before, input[type=checkbox].with-font:f
 .card-img-top {
     object-fit: cover;}
 
-
+.clothe-box{
+    border: thick solid #f70c2b ;}
+         
     
 
 /* CSS */
@@ -207,7 +209,10 @@ button {
   grid-gap: var(--base-padding);
   overflow: auto;
 }
-
+.clothes-box{
+  border: thick solid #2e3139 ;
+  background-color: #3184d1;
+}
 @media screen and (min-width: 600px) {
   .products {
     grid-template-columns: repeat(2, 1fr);

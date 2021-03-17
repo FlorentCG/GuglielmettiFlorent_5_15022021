@@ -32,7 +32,7 @@ addToCartButtonsDOM.forEach(addToCartButtonDOM => {
             price: productDOM.querySelector('.product__price').innerText,
 
             /**description: productDOM.querySelector('.product__description').innerText,**/
-            description: productDOM.querySelector('.product__color').innerText,
+            description: productDOM.querySelector('.product__color').checked,
 
             quantity: 1,
         };
@@ -58,7 +58,7 @@ function insertItemToDOM(product){
             <h3 class="cart__item__price">${product.price}</h3>
 
             
-            <form class="product__color">${product.input}</form> 
+            <form class="product__color">${product.color}</form> 
 
             <button class="btn btn--primary btn--small${(product.quantity === 1 ? ' btn--danger' : '')}" data-action="DECREASE_ITEM">&minus;</button>
             <h3 class="cart__item__quantity">${product.quantity}</h3>
@@ -205,6 +205,7 @@ document.querySelector('form').addEventListener('change', function () {
     document.querySelector(color);  	
     console.log(document.querySelector(color));
 })
+document.querySelector('input[name="choix"]:checked').value;
 
 
 
