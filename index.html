@@ -51,93 +51,19 @@
     </section>
 
 <section class="section">
-<div class="container-fluid">
+<div class ="container-fluid" id="container-fluid">
     
-    <div class="row">
-        <div class="col-sm">
-            <div class="card">
-               
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="product">
-                                <img class="product__image" src="images/teddy_1.jpg" alt="Ours classique">
-                                
-                                    <h2 class="product__name">Le Classique</h2>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    
-                                            <h3 class="product__price">49</h3>
-                                        
-                                            <button class="btn btn--primary" data-action="ADD_TO_CART">Ajouter au panier</button>
-                                        
-                                  
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="product">
-                                <img class="product__image" src="images/teddy_2.jpg" alt="Ours classique">
-                                
-                                    <h2 class="product__name">Le Calin</h2>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    
-                                            <h3 class="product__price">49</h3>
-                                        
-                                            <button class="btn btn--primary" data-action="ADD_TO_CART" id="GO_TO_PRODUCT">Ajouter au panier</button>
-                                        
-                                  
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="product">
-                                <img class="product__image" src="images/teddy_3.jpg" alt="Ours classique">
-                                
-                                    <h2 class="product__name">Le Couple</h2>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    
-                                            <h3 class="product__price">49</h3>
-                                        
-                                            <button class="btn btn--primary" data-action="ADD_TO_CART">Ajouter au panier</button>
-                                        
-                                  
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="product">
-                                <img class="product__image" src="images/teddy_4.jpg" alt="Ours classique">
-                                
-                                    <h2 class="product__name">Le Copain</h2>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    
-                                            <h3 class="product__price">49</h3>
-                                        
-                                            <button class="btn btn--primary" data-action="ADD_TO_CART">Ajouter au panier</button>
-                                        
-                                  
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="product">
-                                <img class="product__image" src="images/teddy_5.jpg" alt="Ours classique">
-                                
-                                    <h2 class="product__name">Le Timide</h2>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    
-                                            <h3 class="product__price">49</h3>
-                                        
-                                            <button class="btn btn--primary" data-action="ADD_TO_CART">Ajouter au panier</button>
-                                        
-                                  
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> 
+    
+    
+
 </div>
 </section>
 
-
+<main class="main pt-5 pb-1">
+    <section class="containers">
+        <h1 class="text-white text-center pb-5"><u>Articles disponibles à la vente</u></h1>  
+            <div class="row" id="teddies_container"></div>
+    </section>
 
 
 <!-- Footer -->
@@ -202,10 +128,13 @@
 
 
 <!-- JS -->
+<script src="article.js"></script>
 
+<script src="json.js"></script>
 
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" ></script>
-<script src="main.js"></script>
-<script src="app.js"></script>
+
+
+
 </body>
 </html>

@@ -191,7 +191,7 @@ function saveCart(){
     countCartTotal();
 }
 
-/**couleurs */
+/**couleurs 
 document.querySelector('form').addEventListener('change', function () {
     var color = document.querySelectorAll('input');
     for (var i = 0; i < color.length; i++) {
@@ -206,6 +206,12 @@ document.querySelector('form').addEventListener('change', function () {
     console.log(document.querySelector(color));
 })
 document.querySelector('input[name="choix"]:checked').value;
+
+*/
+
+
+
+
 
 
 
