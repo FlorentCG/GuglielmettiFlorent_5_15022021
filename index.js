@@ -20,7 +20,7 @@
                                              <h3 class="product__price">${product.price}</h3>
                                          
                                              
-<a href="http://localhost:3000/api/teddies/${product._id}"><input type="button" value="Détails du produit" /></a>                                   
+<a href=""html/product.html?id=${product._id}"><input type="button" value="Détails du produit" /></a>                                   
                                    
                              </div>
                        

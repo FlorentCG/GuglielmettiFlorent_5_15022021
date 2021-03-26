@@ -12,44 +12,24 @@
     <link href="css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-
-    <div class="product" id="product">
-        <div class="row">
-        <h3 class="col-sm-8  text-center formulaire"><u>Formulaire de commande</u></h3>
-        <form class="col-sm-8" id="validationCommande">
-            <div class="form-group">
-                <label class="col-lg-5  label" for="firstName">Nom:</label>
-                <input class="col-lg-5" type="text" id="firstName" required>
-                <label class="col-lg-5  label" for="lastName">Prénom:</label>
-                <input class="col-lg-5" type="text" id="lastName" required>
-                <label class="col-lg-5  label" for="address">Adresse de livraison:</label>
-                <input class="col-lg-5" type="text" id="address" required>
-                <label class="col-lg-5  label" for="city">Ville:</label>
-                <input class="col-lg-5" type="text" id="city" required>
-                <label class="col-lg-5  label" for="email">Email:</label>
-                <input class="col-lg-5 label2" type="email" id="email" required>
-                <button class="col-lg-5 btn btn-lg mt-4 order-submit btn-valide" type="submit" id="validerCommande">Valider la commande</button>
-            </div>
-        </form>
-  
-    
-        <h1>Contactez nous!</h1>
-            <div class="form row">
-                <label>Email</label>
-                <input type="email" name="mail" class="form-control" placeholder="votre mail ici">
-
-
-            </div>
-    <div class ="form group col-12">
-        <label>Votre message</label>
-        <textarea name="message" class="form-control" rows=5></textarea>
-
+<div class="container">
+    <h1>Contactez-nous!</h1>
+   <div class="form row">
+     <div class ="form group col-12">
+         <label>Email</label>
+         <input type="email" name="mail" class="form-control" placeholder="votre mail ici" required>
+        </div>
+        <div class ="form group col-12">
+         <label>Votre message</label>
+        <textarea name="message" class="form-control" rows=5 required minlength="5" maxlength="400"></textarea>
+    </div>
     </div>
     <div class ="form group col-12">
         <input type="button" class="btn btn--primary col-12" value="envoyer">
     </div>
-
-    </div>
+   </div>
+    
 </div>
+<script src="contact.js"></script>
 </body>
 </html>

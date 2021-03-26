@@ -1,9 +1,16 @@
 
-  fetch("http://localhost:3000/api/teddies/")
-  .then(data => data.json())
-  .then(products => {
-      for(let product of products){
-          
+  /**const querystring_url_id = window.location.search;
+    const URLSearchParams = new URLSearchParams (querystring_url_id);
+  const urlProduit = URLSearchParams.get("_id");
+  fetch('http://localhost:3000/api/teddies/'+ url)
+  
+  .then(response => response.json())
+  .then(product => {*/
+    fetch("http://localhost:3000/api/teddies/")
+    .then(data => data.json())
+    .then(products => {
+        for(let product of products){
+           
           document.querySelector(".product").innerHTML +=
           `
           <div class="cart__item">
@@ -19,11 +26,11 @@
             
       `
      
-
+let cart = (JSON.parse(localStorage.getItem('cart')) || []);
 const cartDOM = document.querySelector('.cart');
 const addToCartButtonsDOM = document.querySelectorAll('[data-action="ADD_TO_CART"]');
 
-//console.log(cart);
+
 
 if(cart.length > 0){
     cart.forEach(cartItem => {
@@ -48,9 +55,8 @@ addToCartButtonsDOM.forEach(addToCartButtonDOM => {
             image: productDOM.querySelector('.product__image').getAttribute('src'),
             name: productDOM.querySelector('.product__name').innerText,
             price: productDOM.querySelector('.product__price').innerText,
-
-            /**description: productDOM.querySelector('.product__description').innerText,**/
-            description: productDOM.querySelector('.product__color').checked,
+            description: productDOM.querySelector('.product__description').innerText,
+           
 
             quantity: 1,
         };
@@ -61,7 +67,7 @@ addToCartButtonsDOM.forEach(addToCartButtonDOM => {
             insertItemToDOM(product);
             cart.push(product);
             saveCart();
-            handleActionButtons(addToCartButtonDOM, product)
+           
         }
         
     });
@@ -71,37 +77,23 @@ addToCartButtonsDOM.forEach(addToCartButtonDOM => {
 function insertItemToDOM(product){
     cartDOM.insertAdjacentHTML('beforeend', `
         <div class="cart__item">
-            <img class="cart__item__image" src="${product.image}" alt="${product.name}">
+            <img class="cart__item__image" src=${product.image}>
             <h3 class="cart__item__name">${product.name}</h3>
             <h3 class="cart__item__price">${product.price}</h3>
 
             
-            <form class="product__color">${product.color}</form> 
+            <h3 class="product__description" id="product__description">${product.description}</h3>
 
             
             <h3 class="cart__item__quantity">${product.quantity}</h3>
-            <button class="btn btn--primary btn--small" data-action="INCREASE_ITEM">&plus;</button>
-            <button class="btn btn--danger btn--small" data-action="REMOVE_ITEM">&times;</button>
+            
         </div>
     `);
 
     addCartFooter();
 }
 
-function handleActionButtons(addToCartButtonDOM, product){
-    addToCartButtonDOM.innerText = "In Cart"; 
-    addToCartButtonDOM.disabled = true;
 
-    const cartItemsDOM = cartDOM.querySelectorAll('.cart__item');
-    cartItemsDOM.forEach(cartItemDOM => {                
-        if(cartItemDOM.querySelector('.cart__item__name').innerText === product.name){
-            
-            cartItemDOM.querySelector('[data-action="INCREASE_ITEM"]').addEventListener('click', () => increaseItem(product, cartItemDOM));
-            cartItemDOM.querySelector('[data-action="DECREASE_ITEM"]').addEventListener('click', () => decreaseItem(product, cartItemDOM, addToCartButtonDOM));
-            cartItemDOM.querySelector('[data-action="REMOVE_ITEM"]').addEventListener('click', () => removeItem(product, cartItemDOM, addToCartButtonDOM));
-        }
-    });
-}
 
 
 
@@ -145,10 +137,28 @@ function saveCart(){
     localStorage.setItem('cart', JSON.stringify(cart));
     countCartTotal();
 }
- 
-}                    
-  }); 
 
+cart.onclick =
+        function (){
+           
+                let productCart = {
+                    id : product._id,
+                    name : product.name,
+                    price : product.price,
+                    description : product.description,
+                    imageUrl : product.imageUrl,
+                   
+                }
+                let newProduct = JSON.stringify(productCart);
+                localStorage.setItem(product._id, newProduct);
+                alert(message = 'Article ajouté au panier');
+                
+            }  
+
+  } 
+            
+  }); 
+ 
 
 /** function getID(){
       const param = windows.location.search;
