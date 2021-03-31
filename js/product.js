@@ -46,7 +46,7 @@ let moins = document.getElementById('moins');
     // Ajout du prix
     let pProduct = document.createElement("p");
     pProduct.classList.add("card-prix");
-    pProduct.innerHTML = "Prix : " + " " + product.price/100 + "€";
+    pProduct.innerHTML = "Prix : " + " " + product.price + "€";
     divcontainer.appendChild(pProduct);
 
     // Ajout de la description

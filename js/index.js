@@ -9,7 +9,7 @@ fetch("http://localhost:3000/api/teddies/")
     for(let i = 0; i < products.length; i++){
         // Création de la div 
         let divcontainer = document.createElement("div");
-        
+        divcontainer.className= 'card-container';
         container.appendChild(divcontainer);
 
         //Ajout de l'image

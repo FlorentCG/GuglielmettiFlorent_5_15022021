@@ -115,7 +115,7 @@ body {
   grid-gap: var(--base-padding);
   grid-template-columns: 1fr 3fr;
   margin: 0 auto;
-  padding: 0 var(--base-padding);
+  padding: 1;
 }
 
 @media screen and (min-width: 600px) {

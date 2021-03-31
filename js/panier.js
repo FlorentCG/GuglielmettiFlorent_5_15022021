@@ -118,6 +118,7 @@ if(storedValues == null || storedValues.length === 0){
     const garbage = document.createElement('button');
     productDivCart.appendChild(garbage);
     garbage.className = 'icon_garbage';
+    garbage.classList.add("btn--primary");
 
     const cartLink = document.createElement('a');
     garbage.appendChild(cartLink);
