@@ -1,169 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=360, initial-scale=1">
-	<title></title>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
-	<link rel="stylesheet" href="main.css">
-</head>
+
+	<head>
+		<!-- Site meta -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>Orinoco, votre boutique en ligne!</title>
+		<!-- CSS -->
+		<link href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+		<link href="css/style.css" rel="stylesheet" type="text/css">
+		
+	</head>
+
 
 <body>
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Orinoco</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
+                <ul class="navbar-nav m-auto">
+                    <li class="nav-item m-auto">
+                        <a class="nav-link" href="index.html">Retour à la liste des produits</a>
+                    </li>
+                    
+                </ul>
+    
+            </div>
+            
+        </div>
+    </nav>
 	<main class="main-container">
 
 		<section class="section">
-			<h2 class="text-center">Products</h2>
-			<div class="products">
-				
-				<div class="product">
-					<img class="product__image" src="img/products/beer.jpg" alt="Beer">
-					<h2 class="product__name">Beer</h2>
-					<h3 class="product__price">6.00</h3>
-					<button class="btn btn--primary" data-action="ADD_TO_CART">Add To Cart</button>
-				</div>
-				<div class="product">
-					<img class="product__image" src="images/teddy_1.jpg" alt="Premier ours">
-					<h2 class="product__name">Energy Drink</h2>
-					<h3 class="product__price">5.00</h3>
-					<button class="btn btn--primary" data-action="ADD_TO_CART">Add To Cart</button>
-				</div>
-				<div class="product">
-					<img class="product__image" src="img/products/juice.jpg" alt="Juice">
-					<h2 class="product__name">Juice</h2>
-					<h3 class="product__price">4.00</h3>
-					<button class="btn btn--primary" data-action="ADD_TO_CART">Add To Cart</button>
-				</div>
-				<div class="product">
-					<img class="product__image" src="img/products/milk.jpg" alt="Milk">
-					<h2 class="product__name">Milk</h2>
-					<h3 class="product__price">2.50</h3>
-					<button class="btn btn--primary" data-action="ADD_TO_CART">Add To Cart</button>
-				</div>
-				<div class="product">
-					<img class="product__image" src="img/products/mineral-water.jpg" alt="Mineral Water">
-					<h2 class="product__name">Mineral Water</h2>
-					<h3 class="product__price">1.00</h3>
-					<button class="btn btn--primary" data-action="ADD_TO_CART">Add To Cart</button>
-				</div>
-				<div class="product">
-					<img class="product__image" src="img/products/smoothie.jpg" alt="Smoothie">
-					<h2 class="product__name">Smoothie</h2>
-					<h3 class="product__price">6.00</h3>
-					<button class="btn btn--primary" data-action="ADD_TO_CART">Add To Cart</button>
-				</div>
+			<main id="product_page">
+				<h1>ORINOCO</h1>
+				<h2>Récapitulatif de votre panier</h2>
+			</main>
+			<div class="back">
+				<button><a href="index.html" title="Retour sur la page d'accueil">Retour à l'accueil</a></button>
 			</div>
 		</section>
 
-		<section class="section">
-			<h2 class="text-center">Panier</h2>
-			<div class="cart"></div>
-		</section>
+		
 
 	</main>
 
-	<footer class="bg-light text-center text-lg-start">
-		<!-- Grid container -->
-		<div class="container p-4">
-		  <!--Grid row-->
+	<footer class="site-footer">
+		<div class="container">
 		  <div class="row">
-			<!--Grid column-->
-			<div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-			  <h5 class="text-uppercase">Links</h5>
+			<div class="col-sm-12 col-md-6">
+			  <h6>About</h6>
+			  <p class="text-justify">Scanfcode.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative  to help the upcoming programmers with the code. Scanfcode focuses on providing the most efficient code or snippets as the code wants to be simple. We will help programmers build up concepts in different programming languages that include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL and Algorithm.</p>
+			</div>
 	  
-			  <ul class="list-unstyled mb-0">
-				<li>
-				  <a href="#!" class="text-dark">Link 1</a>
-				</li>
-				<li>
-				  <a href="#!" class="text-dark">Link 2</a>
-				</li>
-				<li>
-				  <a href="#!" class="text-dark">Link 3</a>
-				</li>
-				<li>
-				  <a href="#!" class="text-dark">Link 4</a>
-				</li>
+			<div class="col-xs-6 col-md-3">
+			  <h6>Categories</h6>
+			  <ul class="footer-links">
+				<li><a href="http://scanfcode.com/category/c-language/">C</a></li>
+				<li><a href="http://scanfcode.com/category/front-end-development/">UI Design</a></li>
+				<li><a href="http://scanfcode.com/category/back-end-development/">PHP</a></li>
+				<li><a href="http://scanfcode.com/category/java-programming-language/">Java</a></li>
+				<li><a href="http://scanfcode.com/category/android/">Android</a></li>
+				<li><a href="http://scanfcode.com/category/templates/">Templates</a></li>
 			  </ul>
 			</div>
-			<!--Grid column-->
 	  
-			<!--Grid column-->
-			<div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-			  <h5 class="text-uppercase mb-0">Links</h5>
-	  
-			  <ul class="list-unstyled">
-				<li>
-				  <a href="#!" class="text-dark">Link 1</a>
-				</li>
-				<li>
-				  <a href="#!" class="text-dark">Link 2</a>
-				</li>
-				<li>
-				  <a href="#!" class="text-dark">Link 3</a>
-				</li>
-				<li>
-				  <a href="#!" class="text-dark">Link 4</a>
-				</li>
+			<div class="col-xs-6 col-md-3">
+			  <h6>Quick Links</h6>
+			  <ul class="footer-links">
+				<li><a href="http://scanfcode.com/about/">About Us</a></li>
+				<li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
+				<li><a href="http://scanfcode.com/contribute-at-scanfcode/">Contribute</a></li>
+				<li><a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a></li>
+				<li><a href="http://scanfcode.com/sitemap/">Sitemap</a></li>
 			  </ul>
 			</div>
-			<!--Grid column-->
-	  
-			<!--Grid column-->
-			<div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-			  <h5 class="text-uppercase">Links</h5>
-	  
-			  <ul class="list-unstyled mb-0">
-				<li>
-				  <a href="#!" class="text-dark">Link 1</a>
-				</li>
-				<li>
-				  <a href="#!" class="text-dark">Link 2</a>
-				</li>
-				<li>
-				  <a href="#!" class="text-dark">Link 3</a>
-				</li>
-				<li>
-				  <a href="#!" class="text-dark">Link 4</a>
-				</li>
-			  </ul>
-			</div>
-			<!--Grid column-->
-	  
-			<!--Grid column-->
-			<div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-			  <h5 class="text-uppercase mb-0">Links</h5>
-	  
-			  <ul class="list-unstyled">
-				<li>
-				  <a href="#!" class="text-dark">Link 1</a>
-				</li>
-				<li>
-				  <a href="#!" class="text-dark">Link 2</a>
-				</li>
-				<li>
-				  <a href="#!" class="text-dark">Link 3</a>
-				</li>
-				<li>
-				  <a href="#!" class="text-dark">Link 4</a>
-				</li>
-			  </ul>
-			</div>
-			<!--Grid column-->
 		  </div>
-		  <!--Grid row-->
+		  <hr>
 		</div>
-		<!-- Grid container -->
+		<div class="container">
+		  <div class="row">
+			<div class="col-md-8 col-sm-6 col-xs-12">
+			  <p class="copyright-text">Copyright &copy; 2017 All Rights Reserved by 
+		   <a href="#">Scanfcode</a>.
+			  </p>
+			</div>
 	  
-		<!-- Copyright -->
-		<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-		  © 2020 Copyright:
-		  <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+			<div class="col-md-4 col-sm-6 col-xs-12">
+			  <ul class="social-icons">
+				<li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+				<li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+				<li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+				<li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
+			  </ul>
+			</div>
+		  </div>
 		</div>
-		<!-- Copyright -->
 	  </footer>
 
-	<script src="main.js"></script>
+	<script src="js/panier.js"></script>
 </body>
 
 </html>

@@ -5,19 +5,19 @@
   fetch('http://localhost:3000/api/teddies/'+ url)
   
   .then(response => response.json())
-  .then(product => {*/
+  .then(item => {*/
     fetch("http://localhost:3000/api/teddies/")
     .then(data => data.json())
-    .then(products => {
-        for(let product of products){
+    .then(items => {
+        for(let item of items){
            
-          document.querySelector(".product").innerHTML +=
+          document.querySelector(".item").innerHTML +=
           `
           <div class="cart__item">
-              <img class="product__image" id="product__image" src="${product.image}" >
-              <h3 class="product__name" id="product__name">${product.name}</h3>
-              <h3 class="product__price" id="product__price">${product.price}</h3>
-              <h3 class="product__description" id="product__description">${product.description}</h3>
+              <img class="item__image" id="item__image" src="http://localhost:3000/images/${item.image}" >
+              <h3 class="item__name" id="item__name">${item.name}</h3>
+              <h3 class="item__price" id="item__price">${item.price}</h3>
+              <h3 class="item__description" id="item__description">${item.description}</h3>
               
             
   
@@ -34,15 +34,15 @@ const addToCartButtonsDOM = document.querySelectorAll('[data-action="ADD_TO_CART
 
 if(cart.length > 0){
     cart.forEach(cartItem => {
-        const product = cartItem;
-        insertItemToDOM(product);
+        const item = cartItem;
+        insertItemToDOM(item);
         countCartTotal();
 
         addToCartButtonsDOM.forEach(addToCartButtonDOM => {
-            const productDOM = addToCartButtonDOM.parentNode;
+            const itemDOM = addToCartButtonDOM.parentNode;
 
-            if(productDOM.querySelector('.product__name').innerText === product.name){
-                handleActionButtons(addToCartButtonDOM, product);
+            if(itemDOM.querySelector('.item__name').innerText === item.name){
+                handleActionButtons(addToCartButtonDOM, item);
             }
         });
     });
@@ -50,22 +50,22 @@ if(cart.length > 0){
 
 addToCartButtonsDOM.forEach(addToCartButtonDOM => {
     addToCartButtonDOM.addEventListener('click', () => {
-        const productDOM = addToCartButtonDOM.parentNode;
-        const product = {
-            image: productDOM.querySelector('.product__image').getAttribute('src'),
-            name: productDOM.querySelector('.product__name').innerText,
-            price: productDOM.querySelector('.product__price').innerText,
-            description: productDOM.querySelector('.product__description').innerText,
+        const itemDOM = addToCartButtonDOM.parentNode;
+        const item = {
+            image: itemDOM.querySelector('.item__image').getAttribute('src'),
+            name: itemDOM.querySelector('.item__name').innerText,
+            price: itemDOM.querySelector('.item__price').innerText,
+            description: itemDOM.querySelector('.item__description').innerText,
            
 
             quantity: 1,
         };
 
-        const isInCart = (cart.filter(cartItem => (cartItem.name === product.name)).length > 0);
+        const isInCart = (cart.filter(cartItem => (cartItem.name === item.name)).length > 0);
 
         if(!isInCart){
-            insertItemToDOM(product);
-            cart.push(product);
+            insertItemToDOM(item);
+            cart.push(item);
             saveCart();
            
         }
@@ -74,18 +74,18 @@ addToCartButtonsDOM.forEach(addToCartButtonDOM => {
 });
 
 
-function insertItemToDOM(product){
+function insertItemToDOM(item){
     cartDOM.insertAdjacentHTML('beforeend', `
         <div class="cart__item">
-            <img class="cart__item__image" src=${product.image}>
-            <h3 class="cart__item__name">${product.name}</h3>
-            <h3 class="cart__item__price">${product.price}</h3>
+            <img class="cart__item__image" src=${item.image}>
+            <h3 class="cart__item__name">${item.name}</h3>
+            <h3 class="cart__item__price">${item.price}</h3>
 
             
-            <h3 class="product__description" id="product__description">${product.description}</h3>
+            <h3 class="item__description" id="item__description">${item.description}</h3>
 
             
-            <h3 class="cart__item__quantity">${product.quantity}</h3>
+            <h3 class="cart__item__quantity">${item.quantity}</h3>
             
         </div>
     `);
@@ -141,16 +141,16 @@ function saveCart(){
 cart.onclick =
         function (){
            
-                let productCart = {
-                    id : product._id,
-                    name : product.name,
-                    price : product.price,
-                    description : product.description,
-                    imageUrl : product.imageUrl,
+                let itemCart = {
+                    id : item._id,
+                    name : item.name,
+                    price : item.price,
+                    description : item.description,
+                    imageUrl : item.imageUrl,
                    
                 }
-                let newProduct = JSON.stringify(productCart);
-                localStorage.setItem(product._id, newProduct);
+                let newitem = JSON.stringify(itemCart);
+                localStorage.setItem(item._id, newitem);
                 alert(message = 'Article ajouté au panier');
                 
             }  
@@ -170,8 +170,27 @@ cart.onclick =
   
  
   
+  linkPanier.onclick =
+        function (){
+           
+                let teddiePanier = {
+                    id : product._id,
+                    name : product.name,
+                    price : product.price,
+                    description : product.description,
+                    imageUrl : product.imageUrl,
+                    qty:1,
+                }
+                let productPanier = JSON.stringify(teddiePanier);
+                localStorage.setItem(product._id, productPanier);
+                alert(message = 'vos articles ont bien été ajouté au panier');
+                }
   
   
   
   
-  
+                const btn_send = document.querySelector("#cart");
+                console.log(btn_send)
+                btn_send.addEventListener("click", (event)=>{
+                    event.preventDefault()
+                })

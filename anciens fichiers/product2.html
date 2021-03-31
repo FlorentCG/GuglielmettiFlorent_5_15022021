@@ -55,19 +55,32 @@
     </div>
 </div>
 <section class="section">
-    <main class="main pt-5 pb-1">
-        <div class="container">
-            <h1 class="col-lg-12 text-white text-center pb-5"><u>Détails du produit</u></h1>
-            <div class="row" id="products_container"></div>
-            <div class="bordure2" id="products_container2">
-              
-        </div>
-    </main>
+    <div class ="product" id="product">
+        
+         <div class="form-group">
+                                <label for="colors">Color</label>
+                                <select class="custom-select" id="colors">
+                                    <option selected>Select</option>
+                                    <option value="1">Blue</option>
+                                    <option value="2">Red</option>
+                                    <option value="3">Green</option>
+                                </select>
+                            </div>
+        
+        <button class="btn btn--primary" data-action="ADD_TO_CART">Ajouter au panier</button>
+    </div>
     </section>
      
                   
             
-         
+            <section class="sectionCart">
+                <h2 class="text-center">Panier</h2>
+                <div class="cart" id="cart"></div>
+            </section>
+            <!--colors-->
+            <div>
+            <input name="Color Picker" type="color"/>
+            </div>
             
 
         <div class="row">
@@ -208,8 +221,8 @@
 
 
 
-
-<script src="js/product.js"></script>
+<script src="article.js"></script>
+<script src="product.js"></script>
 
 </body>
 </html>
