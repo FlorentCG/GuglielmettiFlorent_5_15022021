@@ -10,11 +10,11 @@
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" >
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <link href="css/style.css" rel="stylesheet" type="text/css">
-        
+        <link rel="shortcut icon" type="image/jpg" href="backend/images/favicon.png"/>
     </head>
 <body>
 
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <nav class="navbar-expand-md">
         <div class="container">
             <a class="navbar-brand" href="index.html">Orinoco</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,9 +26,7 @@
                     <li class="nav-item m-auto">
                         <a class="nav-link" href="index.html">Accueil</a>
                     </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="PanierOrinoco.html">Panier </a>
-                    </li>
+                   
                 </ul>
     
             </div>
@@ -41,28 +39,16 @@
         <p class="lead text-muted mb-0">Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500...</p>
     </div>
 </section>
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="/">Home</a></li>
-                    <li class="breadcrumb-item"><a href="category.html">Category</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Product</li>
-                </ol>
-            </nav>
-        </div>
-    </div>
-</div>
+
 <section class="section">
-    <main class="main pt-5 pb-1">
-        <div class="container">
-            <h1 class="col-lg-12 text-white text-center pb-5"><u>Détails du produit</u></h1>
-            <div class="row" id="products_container"></div>
-            <div class="bordure2" id="products_container2">
+    
+        <div class="card-container">
+           
+            <div class="products_container" id="products_container"></div>
+            <div class="products_container" id="products_container2"></div>
               
         </div>
-    </main>
+    
     </section>
      
                   
@@ -70,61 +56,7 @@
          
             
 
-        <div class="row">
-            <!-- Description -->
-            <div class="col-12">
-                <div class="card border-light mb-3">
-                    <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-align-justify"></i> Description</div>
-                    <div class="card-body">
-                        <p class="card-text">
-                            Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.
-                        </p>
-                        <p class="card-text">
-                            Contrairement à une opinion répandue, le Lorem Ipsum n'est pas simplement du texte aléatoire. Il trouve ses racines dans une oeuvre de la littérature latine classique datant de 45 av. J.-C., le rendant vieux de 2000 ans. Un professeur du Hampden-Sydney College, en Virginie, s'est intéressé à un des mots latins les plus obscurs, consectetur, extrait d'un passage du Lorem Ipsum, et en étudiant tous les usages de ce mot dans la littérature classique, découvrit la source incontestable du Lorem Ipsum. Il provient en fait des sections 1.10.32 et 1.10.33 du "De Finibus Bonorum et Malorum" (Des Suprêmes Biens et des Suprêmes Maux) de Cicéron. Cet ouvrage, très populaire pendant la Renaissance, est un traité sur la théorie de l'éthique. Les premières lignes du Lorem Ipsum, "Lorem ipsum dolor sit amet...", proviennent de la section 1.10.32.
-                        </p>
-                    </div>
-                </div>
-            </div>
-    
-            <!-- Reviews -->
-            <div class="col-12" id="reviews">
-                <div class="card border-light mb-3">
-                    <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-comment"></i> Reviews</div>
-                    <div class="card-body">
-                        <div class="review">
-                            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-                            <meta itemprop="datePublished" content="01-01-2016">January 01, 2018
-    
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                            by Paul Smith
-                            <p class="blockquote">
-                                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                            </p>
-                            <hr>
-                        </div>
-                        <div class="review">
-                            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-                            <meta itemprop="datePublished" content="01-01-2016">January 01, 2018
-    
-                            <span class="fa fa-star" aria-hidden="true"></span>
-                            <span class="fa fa-star" aria-hidden="true"></span>
-                            <span class="fa fa-star" aria-hidden="true"></span>
-                            <span class="fa fa-star" aria-hidden="true"></span>
-                            <span class="fa fa-star" aria-hidden="true"></span>
-                            by Paul Smith
-                            <p class="blockquote">
-                                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                            </p>
-                            <hr>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
     </div>
 
 

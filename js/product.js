@@ -1,11 +1,14 @@
+
+
 // Initialiser le container
 let container = document.getElementById("products_container");
 let option = document.getElementById("option");
 let container2 = document.getElementById("products_container2");
 let res = document.getElementById('result');
 
-let plus = document.getElementById('plus');
-let moins = document.getElementById('moins');
+
+
+
 
 //Récuperer id
 
@@ -28,12 +31,12 @@ let moins = document.getElementById('moins');
     
     // Création de la div 
     let divcontainer = document.createElement("div");
-    divcontainer.classList.add("bordure2");
+    divcontainer.classList.add('card-container');
     container.appendChild(divcontainer);
         
     //Ajout de l'image
     let imgProduct = document.createElement("img");
-    imgProduct.classList.add("card-img2");
+    imgProduct.classList.add('card-img');
     imgProduct.setAttribute('src', product.imageUrl);
     divcontainer.appendChild(imgProduct);
             
@@ -46,7 +49,7 @@ let moins = document.getElementById('moins');
     // Ajout du prix
     let pProduct = document.createElement("p");
     pProduct.classList.add("card-prix");
-    pProduct.innerHTML = "Prix : " + " " + product.price + "€";
+    pProduct.innerHTML = "Prix : " + " " + product.price/100 + "€";
     divcontainer.appendChild(pProduct);
 
     // Ajout de la description
@@ -86,13 +89,14 @@ for (i = 0; i < colors.length; i++) {
     
     
 
-    //ajout du bouton pour ajouter l'product au panier
+    //ajout du bouton pour ajouter product au panier
     let divcontainer2 = document.createElement("btn");
+    divcontainer2.classList.add("card-description");
     products_container2.appendChild(divcontainer2);
 
     let linkCart = document.createElement("a");
     linkCart.classList.add("btn");
-    linkCart.classList.add("btn__centre");
+    linkCart.classList.add("btn--primary");
     linkCart.innerHTML = "Ajouter au panier";
     divcontainer2.appendChild(linkCart);
     linkCart.id = ("cart");
@@ -106,7 +110,7 @@ for (i = 0; i < colors.length; i++) {
 
  
  let productsChoosen = {
-    
+    id: product._id,
     name : product.name,
     price : product.price,
     description : product.description,
