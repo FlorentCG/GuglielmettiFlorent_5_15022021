@@ -60,6 +60,11 @@ background-color: #975fe6;
 font-size: xx-large;
 }
 
+.navbar-brand{
+  font-size: 2rem;
+  padding: 2rem;
+}
+
 
 .card-container{
   padding: 1rem;
@@ -68,6 +73,9 @@ font-size: xx-large;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  margin-bottom: 1rem;
+background-color: white;
+border-radius: 2rem;
 }
 .card-img-top {
     object-fit: cover;}
@@ -83,7 +91,7 @@ display: flex;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-   
+  background-color: white;
 }
 .each_product p{
   font-size: 24px;
@@ -182,6 +190,11 @@ p {
   text-align: center;
 }
 
+.form-group{
+  font-size: 1.5rem;
+  margin: 1rem;
+  padding: 2rem;
+}
 /* ----------------- Buttons ----------------- */
 
 button {
@@ -210,6 +223,8 @@ button {
   background: var(--color-primary);
   max-width: 50%;
   margin: 0 auto;
+  font-size: 1.5rem;
+  padding: 1rem;  
 }
 
 .btn--primary:hover:not(:disabled),
@@ -236,14 +251,19 @@ button {
   grid-gap: var(--base-padding);
   overflow: auto;
 }
-.clothes-box{
-  border: thick solid #2e3139 ;
-  background-color: #3184d1;
-}
+
 @media screen and (min-width: 600px) {
   .products {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+.btn--primary {
+  color: var(--color-white);
+  background: var(--color-primary);
+  max-width: 50%;
+  margin: 0 auto;
+  font-size: 1rem;
+  padding: 1rem;  
 }
 
 @media screen and (min-width: 1000px) {
@@ -273,6 +293,45 @@ button {
   filter: drop-shadow(0px 0px 0px transparent);
 }
 
+.product_cart{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: white;
+  border-radius: 2rem;
+}
+
+.product_price{
+  display: flex;
+}
+.product_price p{
+  margin: 0 auto; 
+}
+
+.product_page{
+  justify-content: center;
+  margin: 1rem;
+  
+  padding: 2rem;
+  display: flex;
+}
+
+
+.product_confirm{
+  justify-content: center;
+  margin: 0 auto;
+  font-size: 2rem;
+}
+.confirm{
+background-color: white;
+padding: 2rem;
+border-radius: 2rem;
+}
+
+.confirm h3{
+  font-size:1.5rem ;
+  font-weight: bold;
+}
 @media screen and (min-width: 600px) {
   .product__image {
     max-width: 150px;
@@ -458,10 +517,22 @@ button {
 }
 @media (max-width:767px)
 {
+  .navbar-toggler-icon{
+    border: solid 1px black;
+    background-color: #33353d;
+  }
   .social-icons li.title
   {
     display:block;
     margin-right:0;
     font-weight:600
+  }
+  .btn--primary {
+    color: var(--color-white);
+    background: var(--color-primary);
+    max-width: 50%;
+    margin: 0 auto;
+    font-size: 1rem;
+    padding: 1rem;  
   }
 }

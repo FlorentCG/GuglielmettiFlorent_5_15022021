@@ -1,31 +1,31 @@
-// Initialiser le container
+//** Initialisation du container **/ 
 let container = document.getElementById("products_container");
 
-// Récupération de l'api
+//** Récupération de l'api **/
 fetch("http://localhost:3000/api/teddies/")
  .then(data => data.json())
  .then(products => {
-    // Récupération des oursons
+    //** Création de la boucle **/
     for(let i = 0; i < products.length; i++){
-        // Création de la div 
+        //** Création de la div principale **/
         let divcontainer = document.createElement("div");
         divcontainer.className= 'card-container';
         container.appendChild(divcontainer);
 
-        //Ajout de l'image
+         //** Création de l'image  **/
         let imgProduct = document.createElement("img");
         divcontainer.appendChild(imgProduct);
         imgProduct.className = 'card-img';
         imgProduct.setAttribute('src', products[i].imageUrl);
         
 
-        // Ajout du h2
+        //** Création du H2  **/
         let h2Product = document.createElement("h2");
         h2Product.classList.add("card-title");
         h2Product.innerHTML = products[i].name;
         divcontainer.appendChild(h2Product);
 
-        //création du lien vers le produit
+        //** Création du lien détails produit **/
         let linkProduct = document.createElement("a");
         linkProduct.classList.add("btn");
         linkProduct.classList.add("btn--primary");

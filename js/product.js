@@ -7,58 +7,46 @@ let container2 = document.getElementById("products_container2");
 let res = document.getElementById('result');
 
 
-
-
-
-//Récuperer id
-
-
-/**const querystring_url_id = window.location.search;
-    const params = new URLSearchParams (querystring_url_id);
-  const urlProduit = params.get('id');
-  fetch('http://localhost:3000/api/teddies/'+ urlProduit)
-  
-  .then(response => response.json())
-  .then(product =>**/
+    //** Récupération de l'URL du produit **/
     const querystring_url_id = window.location.search;
     const params = new URLSearchParams (querystring_url_id);
-  const urlProduit = params.get('id');
-  fetch('http://localhost:3000/api/teddies/'+ urlProduit)
+    const urlProduit = params.get('id');
+    fetch('http://localhost:3000/api/teddies/'+ urlProduit)
   
-  .then(response => response.json())
-  .then(product => {
+    .then(response => response.json())
+    .then(product => {
     
     
-    // Création de la div 
+    //** Création de la div principale **/
     let divcontainer = document.createElement("div");
     divcontainer.classList.add('card-container');
     container.appendChild(divcontainer);
         
-    //Ajout de l'image
+    //** Création de l'image  **/
     let imgProduct = document.createElement("img");
     imgProduct.classList.add('card-img');
     imgProduct.setAttribute('src', product.imageUrl);
     divcontainer.appendChild(imgProduct);
             
-    // Ajout du h2
+    //** Création du H2  **/
     let h2Product = document.createElement("h2");
     h2Product.classList.add("card-title2");
     h2Product.innerHTML = product.name;
     divcontainer.appendChild(h2Product);
 
-    // Ajout du prix
+    //** Création du prix  **/
     let pProduct = document.createElement("p");
     pProduct.classList.add("card-prix");
     pProduct.innerHTML = "Prix : " + " " + product.price/100 + "€";
     divcontainer.appendChild(pProduct);
 
-    // Ajout de la description
+    //** Création du paragraphe description  **/
     let descriptionProduct = document.createElement("p");
     descriptionProduct.classList.add("card-description");
     descriptionProduct.innerHTML = product.description;
     divcontainer.appendChild(descriptionProduct);
 
-    // création choix couleur
+    //** Création du formulaire de choix des couleurs  **/
 let form = document.createElement('form');
 divcontainer.appendChild(form);
 const formDiv = document.createElement('div');
@@ -75,7 +63,7 @@ formDiv.appendChild(select);
 select.setAttribute('name', "Choix de couleurs de " + product.name);
 select.setAttribute('id', "select_1 ");
 
-// ajout des différentes couleurs 
+//** Création du choix des couleurs dans le formulaire  **/
 const colors = product.colors;
 
 for (i = 0; i < colors.length; i++) {
@@ -89,7 +77,7 @@ for (i = 0; i < colors.length; i++) {
     
     
 
-    //ajout du bouton pour ajouter product au panier
+    //** Création du bouton PANIER  **/
     let divcontainer2 = document.createElement("btn");
     divcontainer2.classList.add("card-description");
     products_container2.appendChild(divcontainer2);
@@ -101,7 +89,7 @@ for (i = 0; i < colors.length; i++) {
     divcontainer2.appendChild(linkCart);
     linkCart.id = ("cart");
 
-    // Ecoute de l'évènement valider la commande
+    //** Création de l'évènement de validation  **/
 
     linkCart.addEventListener("click", function (event) {
         event.preventDefault();

@@ -1,22 +1,22 @@
 // Initialiser les containers
-let containerPanier = document.getElementById("teddies_panier");
+let containerPanier = document.getElementById("products_panier");
 let prixPanier = document.getElementById("panierTotal");
 
-// Création du tableau products
+//** Création du tableau de produits  **/
 let productsId = [];
 
-// création de la variable totalpanier
+//** Initialisation du total panier  **/
 let totalPanier = 0;
 
+
+//** Récupération des données en Local storage  **/
 let storedValues = JSON.parse(localStorage.getItem('newArticle'));
 console.log(storedValues);
 
 
-// récupération du localStorage
-/**let v = Object.keys(localStorage);
-for (i=0; i < v.length; i++)**/
 
-// création de la page du récapitulatif panier
+
+//** Création du récapitulatif panier  **/
 const productMain = document.getElementById('product_page');
 const productDiv = document.createElement('div');
 productMain.appendChild(productDiv);
@@ -26,20 +26,18 @@ const productDivCart = document.createElement('div');
 productDiv.appendChild(productDivCart);
 productDivCart.className = 'product_cart';
 
-const productH3 = document.createElement('h3');
-productDivCart.appendChild(productH3);
-productH3.textContent = "Vos oursons :";
 
 
 
+//** Création de la boucle IF pour le panier vide  **/
 if(storedValues == null || storedValues.length === 0){
-    // si le panier est vide 
+   
     const emptyCart = document.createElement('p');
     productDivCart.appendChild(emptyCart);
     emptyCart.className = "empty_cart";
-    emptyCart.textContent = "Votre panier est tristement vide !"
+    emptyCart.textContent = "Votre panier est vide !"
 } else {
-    // si des éléments sont présents dans le panier : récupération des éléments du panier
+    //** Récupération des éléments du panier  **/
     let i = 0;
     for (storedProduct of storedValues) {
         const eachProduct = document.createElement('div');
@@ -48,14 +46,14 @@ if(storedValues == null || storedValues.length === 0){
         eachProduct.className = 'each_product';
         
 
-        const teddiesCart = document.createElement('p');
-        eachProduct.appendChild(teddiesCart);
-        teddiesCart.textContent =  storedProduct.qty + " " + storedProduct.name + " , " + storedProduct.productColor + " , " + storedProduct.id;
+        const productsCart = document.createElement('p');
+        eachProduct.appendChild(productsCart);
+        productsCart.textContent =   storedProduct.name + " , " + storedProduct.productColor + " , " + storedProduct.id;
 
         let imgTeddy = document.createElement("img");
-    imgTeddy.classList.add("card-img");
-    imgTeddy.setAttribute('src', storedProduct.imageUrl);
-    eachProduct.appendChild(imgTeddy);
+        imgTeddy.classList.add("card-img");
+        imgTeddy.setAttribute('src', storedProduct.imageUrl);
+        eachProduct.appendChild(imgTeddy);
 
 
         const productPrice = document.createElement('div');
@@ -67,7 +65,7 @@ if(storedValues == null || storedValues.length === 0){
 
         const price = document.createElement('p');
         productPrice.appendChild(price);
-        price.textContent = storedProduct.price + " €"
+        price.textContent = storedProduct.price/100 + " €"
 
       
 
@@ -75,10 +73,10 @@ if(storedValues == null || storedValues.length === 0){
     };
    
 
-    //calcul du montant total
+    //** Calcul et affichage du total du panier  **/
     let calculPrice = []
     for (storedProduct of storedValues) {
-        let article = storedProduct.price;
+        let article = storedProduct.price/100;
         calculPrice.push(article);
     };
 
@@ -91,7 +89,7 @@ if(storedValues == null || storedValues.length === 0){
     total.className = 'total';
     total.textContent = "Montant total = " + totalPrice + " €";
 
-    //création d'un bouton pour vider le panier
+    //** Création du bouton pour vider le panier  **/
     const empty = document.createElement('button');
     productDivCart.appendChild(empty);
     empty.className = 'btn--primary';
@@ -111,10 +109,10 @@ if(storedValues == null || storedValues.length === 0){
     empty.addEventListener("click", function (event) {
         event.preventDefault();
         localStorage.removeItem('newArticle');
-        alert('Votre panier a bien été vidé !')
+        alert('Votre panier a été vidé!')
         window.location.href = "panier.html";
     });
-//Création de la classe client
+//** Création de la classe et de l'objet client **/
 class Client {
     constructor(firstName, lastName, address, city, email) {
     (this.firstName = firstName),
@@ -125,11 +123,11 @@ class Client {
     }
 }
 
-//Création de l'objet client
+
 let form = document.querySelector('#validationCommande');
 form.addEventListener('submit', (e) => {
 
-    // check champs du formulaire
+   
     if (!document.querySelector('#firstName').value.match(/^([a-zA-Zàâäéèêëïîôöùûüç' ]+)$/)){
         alert('Le champs nom contient des erreurs');
         window.location ='panier.html';
@@ -151,8 +149,8 @@ form.addEventListener('submit', (e) => {
         window.location ='panier.html';
     }
 
-    //création du nouveau client
-    event.preventDefault();
+    
+    window.event.preventDefault();
     let newClient = new Client (
         document.querySelector('#firstName').value,
         document.querySelector('#lastName').value,
@@ -161,7 +159,7 @@ form.addEventListener('submit', (e) => {
         document.querySelector('#email').value,
     );
 
-    // Création de l'objet résultat
+    //** Création du résultat  **/
     let resultat = {
         contact : {
             firstName : newClient.firstName,
@@ -173,7 +171,7 @@ form.addEventListener('submit', (e) => {
         products : productsId
     }
     
-    // Apelle de fetch avec order
+    //** Envoi du résultat via la méthode stringify  **/
     fetch('http://localhost:3000/api/teddies/order', {
         method: 'POST',
         headers : {
@@ -181,7 +179,7 @@ form.addEventListener('submit', (e) => {
         },
         body : JSON.stringify (resultat)
     })
-        //réponse du serveur
+       //**Local storage de la commande  **/
         .then(response => response.json())
         .then(response => {
             localStorage.clear();
