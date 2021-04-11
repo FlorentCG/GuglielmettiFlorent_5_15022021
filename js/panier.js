@@ -182,7 +182,7 @@ form.addEventListener('submit', (e) => {
        //**Local storage de la commande  **/
         .then(response => response.json())
         .then(response => {
-            localStorage.clear();
+            try{localStorage.clear();
                 let objCommande = {
                     idCommande : response.orderId,
                     prixTotal : totalPrice
@@ -190,7 +190,13 @@ form.addEventListener('submit', (e) => {
                 let commande = JSON.stringify(objCommande);
                 localStorage.setItem('commande', commande);
                 window.location = 'confirmation.html';
+            } catch (error) {
+                console.error(error);
+                // expected output: ReferenceError: nonExistentFunction is not defined
+                // Note - error messages will vary depending on browser
+              }
             });  
+        
 })
     
 }; 
