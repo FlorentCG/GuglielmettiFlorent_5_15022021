@@ -7,14 +7,14 @@ let container2 = document.getElementById("products_container2");
 let res = document.getElementById('result');
 
 
-    //** Récupération de l'URL du produit **/
-    const querystring_url_id = window.location.search;
-    const params = new URLSearchParams (querystring_url_id);
-    const urlProduit = params.get('id');
-    fetch('http://localhost:3000/api/teddies/'+ urlProduit)
-  
-    .then(response => response.json())
-    .then(product => {
+//** Récupération de l'URL du produit **/
+const querystring_url_id = window.location.search;
+const params = new URLSearchParams (querystring_url_id);
+const urlProduit = params.get('id');
+fetch('http://localhost:3000/api/teddies/'+ urlProduit)
+
+.then(response => response.json())
+.then(product => {
     
     
     //** Création de la div principale **/
@@ -47,31 +47,31 @@ let res = document.getElementById('result');
     divcontainer.appendChild(descriptionProduct);
 
     //** Création du formulaire de choix des couleurs  **/
-let form = document.createElement('form');
-divcontainer.appendChild(form);
-const formDiv = document.createElement('div');
-form.appendChild(formDiv);
-formDiv.className = 'colors_choice';
+    let form = document.createElement('form');
+    divcontainer.appendChild(form);
+    const formDiv = document.createElement('div');
+    form.appendChild(formDiv);
+    formDiv.className = 'colors_choice';
 
-const label = document.createElement('label');
-formDiv.appendChild(label);
-label.textContent = "Personnalisez sa couleur : ";
-label.setAttribute('for', "Choix de couleurs de " + product.name);
+    const label = document.createElement('label');
+    formDiv.appendChild(label);
+    label.textContent = "Personnalisez sa couleur : ";
+    label.setAttribute('for', "Choix de couleurs de " + product.name);
 
-const select = document.createElement('select');
-formDiv.appendChild(select);
-select.setAttribute('name', "Choix de couleurs de " + product.name);
-select.setAttribute('id', "select_1 ");
+    const select = document.createElement('select');
+    formDiv.appendChild(select);
+    select.setAttribute('name', "Choix de couleurs de " + product.name);
+    select.setAttribute('id', "select_1 ");
 
-//** Création du choix des couleurs dans le formulaire  **/
-const colors = product.colors;
+    //** Création du choix des couleurs dans le formulaire  **/
+    const colors = product.colors;
 
-for (i = 0; i < colors.length; i++) {
-    const selectOption = document.createElement('option');
-    select.appendChild(selectOption);
-    selectOption.textContent = colors[i];
-    selectOption.setAttribute("value", colors[i]);
-}
+    for (i = 0; i < colors.length; i++) {
+        const selectOption = document.createElement('option');
+        select.appendChild(selectOption);
+        selectOption.textContent = colors[i];
+        selectOption.setAttribute("value", colors[i]);
+    }
     
         
     
@@ -97,40 +97,40 @@ for (i = 0; i < colors.length; i++) {
     
 
  
- let productsChoosen = {
-    id: product._id,
-    name : product.name,
-    price : product.price,
-    description : product.description,
-    imageUrl : product.imageUrl,
-    productColor: select.value,
-    qty:1
- };  
+    let productsChoosen = {
+       id: product._id,
+       name : product.name,
+       price : product.price,
+       description : product.description,
+       imageUrl : product.imageUrl,
+       productColor: select.value,
+       qty:1
+    };  
 
- let storedValues = JSON.parse(localStorage.getItem('newArticle'));
-                const Color = select.value;
-                if(storedValues) {
-                    storedValues.push(productsChoosen);
-                    localStorage.setItem('newArticle', JSON.stringify(storedValues));
-                    console.log(storedValues);
-                    if (window.confirm(product.name + " " + Color + ' a bien été ajouté. Souhaitez vous consulter votre panier ?')) { 
-                        window.location.href = "panier.html";
-                    } else {
-                        window.location.href = "index.html";
-                    }
-                } else {
-                    storedValues = [];
-                    storedValues.push(productsChoosen);
-                    localStorage.setItem('newArticle', JSON.stringify(storedValues));
-                    console.log(    );
-                    if (window.confirm(product.name + " " + Color + ' a bien été ajouté. Souhaitez vous consulter votre panier ?')) { 
-                        window.location.href = "panier.html";
-                    } else {
-                        window.location.href = "index.html";
-                    }
-                }
-            });
-}
+    let storedValues = JSON.parse(localStorage.getItem('newArticle'));
+               const Color = select.value;
+               if(storedValues) {
+                   storedValues.push(productsChoosen);
+                   localStorage.setItem('newArticle', JSON.stringify(storedValues));
+                   console.log(storedValues);
+                   if (window.confirm(product.name + " " + Color + ' a bien été ajouté. Souhaitez vous consulter votre panier ?')) { 
+                       window.location.href = "panier.html";
+                   } else {
+                       window.location.href = "index.html";
+                   }
+               } else {
+                   storedValues = [];
+                   storedValues.push(productsChoosen);
+                   localStorage.setItem('newArticle', JSON.stringify(storedValues));
+                   console.log(    );
+                   if (window.confirm(product.name + " " + Color + ' a bien été ajouté. Souhaitez vous consulter votre panier ?')) { 
+                       window.location.href = "panier.html";
+                   } else {
+                       window.location.href = "index.html";
+                   }
+               }
+           });
+    }
 
 ).catch(error => console.log(error))
 
