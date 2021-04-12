@@ -204,6 +204,12 @@ button {
   border: none;
 }
 
+ button.navbar-toggler{
+  position: absolute;
+  right: 10px;
+  top: 15px;
+ }
+
 :disabled {
   opacity: .5;
   cursor: not-allowed;
